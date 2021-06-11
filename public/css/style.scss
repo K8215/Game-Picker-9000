@@ -1,0 +1,206 @@
+//Variables
+$green: #7fac51;
+$blue: #1b2838;
+$navy: #101822;
+$white: #fff;
+
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+//Animations
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: .25;
+    }
+
+    75% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+//Global Styles
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    background: $blue;
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    //HTML elements
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0 0 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: $green;
+
+        &:hover {
+            color: $green;
+            text-decoration: none;
+        }
+    }
+
+    hr {
+        margin: 50px 0;
+    }
+
+    ol,
+    ul {
+        padding-left: 2rem;
+    }
+
+    ol {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        column-count: 3;
+        column-gap: 3rem;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            margin: 0 0 1rem;
+        }
+
+        @media (max-width:992px) {
+            column-count: 2;
+        }
+
+        @media (max-width:540px) {
+            column-count: 1;
+        }
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    button {
+        background: $navy;
+        border-radius: 0;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        padding: .75rem 2rem;
+        text-transform: uppercase;
+        transition: all .5s ease;
+
+        &:hover {
+            background: $green;
+        }
+    }
+
+    form {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        margin: 3rem 0;
+
+        input {
+            background: lighten($blue, 10%);
+            border: $navy;
+            border-radius: 0;
+            color: $white;
+            padding: 10px 15px;
+            width: 100%;
+
+            &::placeholder {
+                color: $white;
+            }
+        }
+    }
+
+    //Modules
+    #randContainer,
+    #allContainer {
+        display: none;
+    }
+
+    #loader {
+        animation: pulse .75s infinite;
+        display: none;
+        transition: all .5s ease;
+    }
+
+    #outputRand {
+        color: $green;
+        display: block;
+        font-size: 2em;
+        margin: 15px 0 30px;
+    }
+
+    //Landmarks
+    header {
+        background: $navy;
+        padding: 15px 30px;
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+    }
+
+    main {
+        margin: 0 auto;
+        max-width: 1140px;
+        min-height: 100vh;
+        padding: 100px 30px;
+        width: 100%;
+    }
+
+    footer {
+        background: $navy;
+        font-size: .85rem;
+        padding: 1rem 0;
+        text-align: center;
+    }
+}
