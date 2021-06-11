@@ -2,7 +2,7 @@
 Web app that randomly generates a game from your steam library. 
 
 API KEY INSTRUCTIONS:
-This application accessses the Steam Web API. You must obtain a unique API key from Steam in order to host the application yourself. 
+This application accesses the Steam Web API. You must obtain a unique API key from Steam in order to host the application yourself. 
 
 1. Visit https://steamcommunity.com/dev/apikey and log in to recieve a key.
 2. Create a .env file in the root of the project.
