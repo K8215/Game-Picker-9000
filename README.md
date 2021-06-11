@@ -1,5 +1,5 @@
 # Game-Picker-9000
-Web app that randomly generates a game from your steam library. 
+Web application that takes in your Steam ID and returns a random game from your library so you don't have to spend a half-hour scrolling trying to figure out what to play next.
 
 API KEY INSTRUCTIONS:
 This application accesses the Steam Web API. You must obtain a unique API key from Steam in order to host the application yourself. 
