@@ -26,6 +26,7 @@ app.get('/games/:steamId', async (req, res) => {
     const steamId = req.params.steamId;
     const apiKey = process.env.API_KEY;
     const api_url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json&include_appinfo=true`;
+
     const fetch_response = await fetch(api_url);
     const json = await fetch_response.json();
     res.json(json);
