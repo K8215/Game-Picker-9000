@@ -15,41 +15,52 @@
     </header>
 
     <main>
-        <h2>Welcome to the Game Picker!</h2>
-        <p>Do you tremble indecisively before the cascade of unplayed games in your Steam library? Well, tremble no
-            more, friend! Your game picking days are over! The Game Picker 9000 is here to do all the picking for you.
-            Simply enter your 17-digit steam ID in the field, hit submit, and in seconds you'll have a freshly selected
-            game to play. If you're not pleased with the selection, press the Reshuffle button for another go-round. But
-            don't press it too many times, or you'll end up just as indecisive as you were before!</p>
-        <p>Happy gaming!</p>
-        &nbsp;
-        <h3>Don't Know Your Steam ID?</h3>
-        <ol>
-            <li>Log into the Steam client on your desktop.</li>
-            <li>In the upper right, where your Steam handle and profile picture are, click on the tiny down arrow to
-                open a dropdown menu.</li>
-            <li>Select "Account Details" from the dropdown menu.</li>
-            <li>At the top of the Account Details page you'll see "YourHandle's Account" in large type. Right under that
-                is your Steam ID.
-            </li>
-        </ol>
-        &nbsp;
-        <h3>Don't have a Steam account?</h3>
-        <p>Give the game picker a whirl with this sample id: 76561198052374144</p>
-        <form>
-            <input id="inputId" type="text" placeholder="Enter your Steam ID number">
-            <button id="buttonSubmit" type="submit">Submit</button>
-        </form>
-        <div id="randContainer">
-            <h3>Your Selection: <span id="outputRand"></span></h3>
-            <button id="buttonRand">Reshuffle</button>
+        <div class="hero">
+            <img src="../img/keyboard.jpeg" alt="keyboard texture" class="hero__bg">
+            <div class="container">
+                <form>
+                    <input id="inputId" type="text" placeholder="Enter your Steam ID number...">
+                    <button id="buttonSubmit" type="submit">Submit</button>
+                </form>
+                <h3 id="loader">Loading...</h3>
+                <div id="randContainer">
+                    <h3>Your Selection: <span id="outputRand"></span></h3>
+                    <button id="buttonRand">Reshuffle</button>
+                </div>
+            </div>
         </div>
-        <hr>
-        <h3 id="loader">Loading...</h3>
-        <div id="allContainer">
-            <h2>All Games (<span id="outputTotal"></span>): </h2>
-            <ul id="outputList">
-            </ul>
+        <div class="container">
+            <div id="allContainer">
+                <h2>All Games (<span id="outputTotal"></span>): </h2>
+                <ul id="outputList">
+                </ul>
+                <hr>
+            </div>
+            <h2>Welcome to the Game Picker!</h2>
+            <p>Do you tremble indecisively before the cascade of unplayed games in your Steam library? Well, tremble no
+                more, friend! Your game picking days are over! The Game Picker 9000 is here to do all the picking for
+                you.
+                Simply enter your 17-digit steam ID in the field, hit submit, and in seconds you'll have a freshly
+                selected
+                game to play. If you're not pleased with the selection, press the Reshuffle button for another go-round.
+                But
+                don't press it too many times, or you'll end up just as indecisive as you were before!</p>
+            <p>Happy gaming!</p>
+            &nbsp;
+            <h3>Don't Know Your Steam ID?</h3>
+            <ol>
+                <li>Log into the Steam client on your desktop.</li>
+                <li>In the upper right, where your Steam handle and profile picture are, click on the tiny down arrow to
+                    open a dropdown menu.</li>
+                <li>Select "Account Details" from the dropdown menu.</li>
+                <li>At the top of the Account Details page you'll see "YourHandle's Account" in large type. Right under
+                    that
+                    is your Steam ID.
+                </li>
+            </ol>
+            &nbsp;
+            <h3>Don't have a Steam account?</h3>
+            <p>Give the game picker a whirl with this sample id: 76561198052374144</p>
         </div>
     </main>
 

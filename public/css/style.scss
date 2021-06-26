@@ -125,7 +125,7 @@ body {
     }
 
     button {
-        background: $navy;
+        background: $blue;
         border-radius: 0;
         border: none;
         color: $white;
@@ -160,6 +160,29 @@ body {
     }
 
     //Modules
+    .container {
+        margin: 0 auto;
+        max-width: 1140px;
+        padding: 100px 30px;
+        width: 100%;
+    }
+
+    .hero {
+        align-items: center;
+        background: $navy;
+        display: flex;
+        min-height: 50vh;
+        position: relative;
+
+        &__bg {
+            height: 100%;
+            object-fit: cover;
+            opacity: .1;
+            position: absolute;
+            width: 100%;
+        }
+    }
+
     #randContainer,
     #allContainer {
         display: none;
@@ -180,8 +203,11 @@ body {
 
     //Landmarks
     header {
-        background: $navy;
+        background: transparent;
         padding: 15px 30px;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
 
         h1 {
             font-size: 2rem;
@@ -189,13 +215,7 @@ body {
         }
     }
 
-    main {
-        margin: 0 auto;
-        max-width: 1140px;
-        min-height: 100vh;
-        padding: 100px 30px;
-        width: 100%;
-    }
+    main {}
 
     footer {
         background: $navy;
