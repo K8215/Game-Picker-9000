@@ -66,6 +66,11 @@ body {
         font-size: 1.5rem;
     }
 
+    h4 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
     p {
         margin-top: 0;
         margin-bottom: 1rem;
@@ -101,6 +106,7 @@ body {
         padding: 0;
 
         li {
+            break-inside: avoid;
             margin: 0 0 1rem;
         }
 
@@ -148,10 +154,27 @@ body {
     }
 
     form {
-        align-items: center;
-        display: flex;
-        justify-content: flex-start;
         margin: 3rem 0;
+
+        .field-wrapper {
+            align-items: center;
+            display: flex;
+            justify-content: flex-start;
+
+            label {
+                opacity: 0;
+                position: absolute;
+                pointer-events: none;
+            }
+        }
+
+        .checkbox-wrapper {
+            margin: 0 0 30px;
+
+            label {
+                cursor: pointer;
+            }
+        }
 
         input {
             background: lighten($blue, 10%);
@@ -160,6 +183,14 @@ body {
             color: $white;
             padding: 10px 15px;
             width: 100%;
+
+            &[type="checkbox"] {
+                cursor: pointer;
+                display: inline-block;
+                height: 16px;
+                margin: 0 5px 0 0;
+                width: 16px;
+            }
 
             &::placeholder {
                 color: $white;
@@ -182,6 +213,11 @@ body {
         min-height: 50vh;
         position: relative;
 
+        h2 {
+            font-size: 4rem;
+            text-align: center;
+        }
+
         &__bg {
             height: 100%;
             object-fit: cover;
@@ -199,6 +235,7 @@ body {
     #loader {
         animation: pulse .75s infinite;
         display: none;
+        font-size: 1.5rem;
         transition: all .5s ease;
     }
 
@@ -211,6 +248,11 @@ body {
 
     .btn {
         margin: 30px 0 0;
+    }
+
+    .game-time {
+        font-size: .75rem;
+        opacity: .75;
     }
 
     //Landmarks

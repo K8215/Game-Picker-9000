@@ -19,10 +19,17 @@
             <img src="../img/keyboard.jpeg" alt="keyboard texture" class="hero__bg">
             <div class="container">
                 <form>
-                    <input id="inputId" type="text" placeholder="Enter your Steam ID number...">
-                    <button id="buttonSubmit" type="submit">Submit</button>
+                    <div class="checkbox-wrapper">
+                        <input id="inputCheckbox" name="inputCheckbox" type="checkbox" />
+                        <label for="inputCheckbox">Filter out games I've already played.</label>
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="inputId">Enter your Steam ID number</label>
+                        <input id="inputId" name="inputId" type="text" placeholder="Enter your Steam ID number...">
+                        <button id="buttonSubmit" type="submit">Submit</button>
+                    </div>
                 </form>
-                <h3 id="loader">Loading...</h3>
+                <div id="loader">Loading...</div>
                 <div id="randContainer">
                     <h3>Your Selection: <span id="outputRand"></span></h3>
                     <button id="buttonRand">Reshuffle</button>
