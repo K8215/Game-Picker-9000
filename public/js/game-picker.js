@@ -4,6 +4,7 @@ const inputCheckbox = document.querySelector('#inputCheckbox')
 const buttonSubmit = document.querySelector('#buttonSubmit')
 const randContainer = document.querySelector('#randContainer')
 const outputRand = document.querySelector('#outputRand')
+const playerName = document.querySelector('#playerName')
 const buttonRand = document.querySelector('#buttonRand')
 const allcontainer = document.querySelector('#allContainer')
 const outputTotal = document.querySelector('#outputTotal')
@@ -13,7 +14,7 @@ const errorMessage = 'Could not retrieve games.'
 
 //Init
 buttonSubmit.addEventListener('click', function (e) {
-    e.preventDefault();
+    e.preventDefault()
 
     //Grab user's input
     let steamId = inputId.value
@@ -24,16 +25,25 @@ buttonSubmit.addEventListener('click', function (e) {
     //Display games
     getGames(steamId)
         .then((gameList) => {
-            loadGames()
+            showGameContainers()
             generateList(gameList)
             randomize(gameList)
-        })
-        .catch((err) => {
+        }).catch((err) => {
             console.log(err)
             outputRand.innerHTML = errorMessage
             outputList.innerHTML = errorMessage
-        });
-});
+        })
+
+    getPlayerInfo(steamId)
+        .then((player) => {
+            const personaName = player.personaname
+            playerName.innerHTML = personaName
+        }).catch((err) => {
+            console.log(err)
+            outputRand.innerHTML = errorMessage
+            outputList.innerHTML = errorMessage
+        })
+})
 
 //Functions
 async function getGames(steamId) {
@@ -55,7 +65,21 @@ async function getGames(steamId) {
     }
 
     return gameList
-};
+}
+
+async function getPlayerInfo(steamId) {
+    const api_url = `/userinfo/${steamId}`
+    const response = await fetch(api_url)
+    const json = await response.json()
+
+    const player = json.response.players[0]
+
+    if (response.status !== 200) {
+        throw new Error(errorMessage)
+    }
+
+    return player
+}
 
 function generateList(gameList) {
     gameList.forEach(function (game) {
@@ -66,7 +90,6 @@ function generateList(gameList) {
         <h4>${game.name}</h4>
         <span class="game-time">Playtime: ${playtime} hrs</span>
         `
-
         outputList.appendChild(newLi)
     });
 
@@ -79,10 +102,10 @@ function randomize(gameList) {
 
     buttonRand.addEventListener('click', () => {
         randomize(gameList)
-    });
+    })
 }
 
-function loadGames() {
+function showGameContainers() {
     loader.style.display = 'none'
     randContainer.style.display = 'block'
     allContainer.style.display = 'block'
