@@ -82,6 +82,9 @@ async function getPlayerInfo(steamId) {
 }
 
 function generateList(gameList) {
+    //Clear listing before each subsequent generation.
+    outputList.innerHTML = "";
+
     gameList.forEach(function (game) {
         var newLi = document.createElement('li')
         var playtime = Math.round(game.playtime_forever / 60)
